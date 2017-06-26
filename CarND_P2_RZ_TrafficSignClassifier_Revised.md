@@ -149,19 +149,19 @@ A validation set is used to assess how well the model is performing. To better t
 
 Loss and accuracy for training and validation data is illustrated in the following graphs:
 
-![png](output_20_2.png)
+![png](output_21_2.png)
 
 
 
-![png](output_20_3.png)
+![png](output_21_3.png)
 
 
 Final accuracy for the train, validation and test data is as follows:
 
     
-    Training Accuracy = 0.992
-    Validation Accuracy = 0.958
-    Test Accuracy = 0.942
+    Training Accuracy = 0.989
+    Validation Accuracy = 0.953
+    Test Accuracy = 0.937
     
 
 ---
@@ -170,7 +170,7 @@ Final accuracy for the train, validation and test data is as follows:
 Five German traffic signs found on the web are used here to test the model on new data. To challenge the model, images with background, poor resolution, noise, blurines and poor contrast with the background were considered:
 
 
-![png](output_24_0.png)
+![png](output_25_0.png)
 
 
 ### Predict the Sign Type for Each Image
@@ -182,7 +182,7 @@ The trained LeNet architecture is used to predict the class for the five images.
 
 
 
-![png](output_28_0.png)
+![png](output_29_0.png)
 
 
     Model Accuracy on the 5 New Images = 80.0 %
@@ -207,8 +207,21 @@ The trained LeNet architecture is used to predict the class for the five images.
  
  For the "Bumpy Road" image, I used a low quality image with background. Model predicted it correctly and the top softmox probability for this image is still high, but the certainty of the model is lower for this compared to previous cases as shown in the bar charts.
  
- For the "No Passing", I used the most challenging image compared to all previous cases. The image is noisy, with poor quality and poor contrast with the background. These led to thhe model incorrectly predicting the "End of No Passing" sign as a "No Passing" sign, although "End of No Passing" had the second highest softmox probability. Another reason reason for the incorrect prediction could be attributed to small number of "End of No Passing" images in the training data set. Also, using color images rather than grayscale images might help to better distinguish between these two signs.
+ For the "No Passing", I used the most challenging image compared to all previous cases. The image is noisy, with poor quality and poor contrast with the background. These led to thhe model incorrectly predicting the "End of No Passing" sign as a "No Passing" sign. Another reason reason for the incorrect prediction could be attributed to small number of "End of No Passing" images in the training data set. Also, using color images rather than grayscale images might help to better distinguish between these two signs.
 
 Softmox probabilities for all of the 5 imaages are shown in the bar charts. Reporting them here again for completeness:
  
-
+ Top 5 softmax probabilities = TopKV2(values=array([[  9.81781244e-01,   1.12785548e-02,   6.80066738e-03,
+              1.34107846e-04,   4.10546545e-06],
+           [  9.97085154e-01,   1.32979860e-03,   4.09958098e-04,
+              3.85209074e-04,   2.53970473e-04],
+           [  9.98115182e-01,   4.98658337e-04,   4.59214789e-04,
+              3.94538598e-04,   1.67115679e-04],
+           [  9.85199451e-01,   1.42002655e-02,   5.10343176e-04,
+              4.83952426e-05,   3.15162615e-05],
+           [  9.99414563e-01,   5.01196075e-04,   7.91842394e-05,
+              2.94051415e-06,   1.52166672e-06]]), indices=array([[ 3,  5,  2,  1,  6],
+           [14, 12,  4,  2, 33],
+           [35,  3, 34, 36, 12],
+           [22, 26, 18, 29, 25],
+           [ 9, 10, 16, 32, 20]]))
